@@ -1,1 +1,20 @@
 en:
+  views:
+    layouts:
+      left-menu:
+        categories: "Music Genre"
+        pop: "Pop"
+        rock: "Rock"
+        balass: "Ballass"
+        rock2: "Rock & Roll"
+        rap: "Rap"
+        latin: "Latin"
+
+      header:
+        acc: "YOUR ACCOUNT"
+        signup: "Sign Up"
+        login: "Login"
+
+      footer:
+        mp3: "MP3 Player"
+        follow: "Follow Us"
