@@ -1,1 +1,60 @@
 en:
+  flash:
+    danger: "You Sure ????"
+  dates:
+    formats:
+      date_month_year_concise: "%d-%m-%y"
+  controller:
+    admin:
+      base:
+        error: "You don't have permission to access"
+      users:
+        sc_user: "Succeed create user"
+        fail_user: "Failed create user"
+        ud_user: "Succeed update user with id: #{params[:id]"
+        fail_ud_user: "Failed update user with id: #{params[:id]"
+        del_user: "Succeed delete user with id: #{params[:id]"
+        fail_del_user: "Failed delete user with id: #{params[:id]"
+        load_user: "Can't find user with id: #{params[:id]}"
+  views:
+    admin:
+      layouts:
+        header:
+          logo: "DASHBOARD"
+          hello: "Hello, #{current_user.name}"
+          profile: "Profile"
+          log_out: "Log Out"
+        sidebar:
+          user: "Users"
+          category: "Categories"
+          artists: "Artists"
+          album: "Albums"
+          song: "Songs"
+        application:
+          admin: "Admin"
+      users:
+        form:
+          info: "PERSONAL INFORMATION"
+          name: "Name*"
+          email: "Email Address*"
+          password: "Password*"
+          password_cf: "Confirm Password*"
+          activated: "Activated"
+        user:
+          activated: "Acctivated"
+          not_activated: "Not Activated"
+          admin: "Admin"
+          member: "Member"
+        index:
+          user_list: "User List"
+          search: "Search"
+          excel: "Export Excel"
+          new_user: "New User"
+          stt: "STT"
+          name: "Name"
+          email: "Email"
+          activated: "Activated"
+          role: "Role"
+          edit: "Edit"
+          delete: "Delete"
+          create_at: "Create At"
