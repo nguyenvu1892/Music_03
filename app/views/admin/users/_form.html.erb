@@ -1,0 +1,30 @@
+<%= form_for [:admin, @user] do |f| %>
+  <div class="register-top-grid">
+    <br/>
+    <h3><%= t "views.admin.users.form.info" %></h3>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="mation">
+      <span><%= t "views.admin.users.form.name" %></span>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <span><%= t "views.admin.users.form.email" %></span>
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+    <div class="register-bottom-grid">
+      <div class="mation">
+        <span><%= t "views.admin.users.form.password" %></span>
+        <%= f.password_field :password, class: "form-control" %><br/>
+        <span><%= t "views.admin.users.form.password_cf" %></span>
+        <%= f.password_field :password_confirmation, class: "form-control" %><br/>
+        <%= f.label :activated, class: "check_box inline" do %>
+          <%= f.check_box :activated %>
+          <span><%= t "views.admin.users.form.activated" %></span>
+        <% end %>
+      </div>
+    </div>
+    <div class="register-but">
+      <%= f.submit :Submit, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+<div class="clearfix"> </div>
