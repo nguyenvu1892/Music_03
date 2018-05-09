@@ -1,10 +1,9 @@
 class Admin::UsersController < Admin::AdminController
   before_action :load_user, only: [:edit, :update, :destroy]
-  after_action :activated?, only: [:edit, :update]
 
   def index
     @users = User.order_user.search_by_name(params[:search])
-      .page(params[:page]).per.Setting.paginate.page
+      .page(params[:page]).per Setting.paginate.page
   end
 
   def new
@@ -26,12 +25,15 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def update
+    activated = params[:user][:activated] == "0" ? false : true
+    update_activated activated
     if @user.update_attributes user_params
       flash[:success] = t "controller.admin.users.ud_user"
+      redirect_to admin_users_path
     else
       flash[:error] = t "controller.admin.users.fail_ud_user"
+      render :edit
     end
-    redirect_to admin_users_path
   end
 
   def destroy
@@ -51,7 +53,7 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def activated?
-    @user.activated = params[:user][:activated] == "0" ? false : true
+    @user.update_attributes activated: activated
   end
 
   def load_user

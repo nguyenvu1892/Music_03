@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <h3 class="sub-header"><%= t "views.admin.categories.index.category_list" %></h3>
+    <%= form_tag(admin_categories_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag t("garena.search"), name: nil %>
+    <% end %><br/>
+    <%= link_to t("garena.excel"), admin_categories_path(format: "xls"), class: "pull-right" %>
+    <%= link_to new_admin_category_path do %>
+      <span><i class="fa fa-plus fa-2px"></i><%= t "views.admin.categories.index.new_category" %></span>
+    <% end %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th><%= t "garena.name" %></th>
+          <th><%= t "garena.create_at" %></th>
+          <th><%= t "garena.edit" %></th>
+          <th><%= t "garena.delete" %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <%= render partial: "category", collection: @categories %>
+        </tbody>
+      </table>
+      <%= paginate @categories, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>

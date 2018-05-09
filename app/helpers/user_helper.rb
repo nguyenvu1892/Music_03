@@ -1,9 +1,9 @@
 module UserHelper
   def activate_user user
     if user.activated?
-      t("views.admin.users.user.activated")
+      t("garena.activated")
     else
-      t("views.admin.users.user.not_activated")
+      t("garena.not_activated")
     end
   end
 

@@ -1,6 +1,19 @@
 en:
   flash:
     danger: "You Sure ????"
+  garena:
+    excel: "Export Excel"
+    stt: "STT"
+    name: "Name"
+    email: "Email"
+    activated: "Activated"
+    not_activated: "Not Activated"
+    role: "Role"
+    edit: "Edit"
+    delete: "Delete"
+    create_at: "Create At"
+    search: "Search"
+    name2: "Name*"
   dates:
     formats:
       date_month_year_concise: "%d-%m-%y"
@@ -16,6 +29,14 @@ en:
         del_user: "Succeed delete user with id: #{params[:id]"
         fail_del_user: "Failed delete user with id: #{params[:id]"
         load_user: "Can't find user with id: #{params[:id]}"
+      users:
+        sc_category: "Succeed create Category"
+        fail_category: "Failed create Category"
+        ud_category: "Succeed update Category with id: #{params[:id]"
+        fail_ud_category: "Failed update Category with id: #{params[:id]"
+        del_category: "Succeed delete Category with id: #{params[:id]"
+        fail_del_category: "Failed delete Category with id: #{params[:id]"
+        load_category: "Can't find Category with id: #{params[:id]}"
   views:
     admin:
       layouts:
@@ -39,22 +60,16 @@ en:
           email: "Email Address*"
           password: "Password*"
           password_cf: "Confirm Password*"
-          activated: "Activated"
         user:
-          activated: "Acctivated"
-          not_activated: "Not Activated"
           admin: "Admin"
           member: "Member"
         index:
           user_list: "User List"
-          search: "Search"
-          excel: "Export Excel"
           new_user: "New User"
-          stt: "STT"
-          name: "Name"
-          email: "Email"
-          activated: "Activated"
-          role: "Role"
-          edit: "Edit"
-          delete: "Delete"
-          create_at: "Create At"
+      categories:
+        index:
+          new_category: "New Category"
+          category_list: "Category List"
+        edit:
+          title: "Editing #{@category.name}"
+          new_category: "New Category"
